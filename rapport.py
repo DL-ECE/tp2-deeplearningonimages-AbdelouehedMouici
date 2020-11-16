@@ -596,11 +596,12 @@ def display_10_images(dataset):
       image, target = dataset[i]
       plot_one_tensor(image)
       plt.show()
+if __name__ == "__main__" :
 
-fmnist_train = FashionMNIST(os.getcwd(), train=True, download=True)
-display_10_images(fmnist_train)
-image, target = fmnist_train[0]
-plot_one_tensor(image)
+    fmnist_train = FashionMNIST(os.getcwd(), train=True, download=True)
+    display_10_images(fmnist_train)
+    image, target = fmnist_train[0]
+    plot_one_tensor(image)
 
 """What is the shape of each images
 How many images do we have
@@ -717,7 +718,7 @@ if __name__ == "__main__":
     
     # Network Hyperparameters 
     minibatch_size = 1000
-    nepoch = 7 #Accuracy pb
+    nepoch = 7
     learning_rate = 0.1
     momentum = 0.2 
 
@@ -739,6 +740,14 @@ if __name__ == "__main__":
 
 """## Open Analysis
 Same as TP 1 please write a short description of your experiment
+
+En faisant varié chaque paramètre je viens à la conclusion suivante :
+
+Plus la valeure de minibatch_size est faible, moins l'estimation sera précise.
+
+Il faut mettre suffisamment de Nepoch pour atteindre une accuracy supérieur à 0.92.
+
+Le taux d'apprentissage, doit être ni trop élevé ni trop bas afin d'éviter les problèmes d'underfitting ou d'overfitting.
 
 # BONUS 
 
